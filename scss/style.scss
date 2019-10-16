@@ -1,0 +1,194 @@
+@import 'common.scss';
+@import 'myscss.scss';
+
+.wrap {
+	@include num(100%, 100%);
+	display: flex;
+	flex-direction: column;
+}
+
+.swiper-container {
+	@extend %full;
+
+	.swiper-wrapper {
+		@extend %full;
+
+		.swiper-slide {
+			@extend %full;
+			display: flex;
+			flex-direction: column;
+
+			header {
+				@include num(100%, pr(50px));
+				@include flex;
+				position: relative;
+				border-bottom: 1px solid #ccc;
+
+				span {
+					flex: 1;
+					@include flex(center);
+					color: #999;
+					font-size: pr(14px);
+					padding: 0 pr(20px);
+				}
+
+				span.pitch {
+					color: #d46474;
+				}
+
+				.bar {
+					position: absolute;
+					bottom: 0;
+					left: 0;
+					@include num(50%, pr(1px));
+					@include flex(center);
+					transition: .5s linear;
+
+					em {
+						@include num(25%, pr(1px));
+						background: #d46474;
+					}
+
+				}
+
+			}
+
+			main {
+				flex: 1;
+
+				.movie-list {
+					@include num(100%, auto);
+
+					li {
+						margin-top: pr(10px);
+						@include num(100%, pr(100px));
+						@include flex;
+						padding: 0 pr(10px);
+						border-bottom: 1px solid #ccc;
+
+						dl {
+							display: flex;
+							align-items: center;
+							flex: 1;
+							line-height: pr(22px);
+
+							dt {
+								@include num(pr(60px), pr(90px));
+
+								img {
+									width: 100%;
+								}
+
+							}
+
+							dd {
+								color: #767676;
+								margin-left: pr(10px);
+
+								.top {
+									display: flex;
+
+									h3 {
+										font-size: pr(18px);
+									}
+
+									p {
+										margin-left: pr(10px);
+										color: #767676;
+
+										span {
+											padding: pr(4px);
+											background: #ccc;
+											color: #fff;
+											margin-right: pr(3px);
+										}
+
+									}
+
+								}
+
+								.cen {
+									display: flex;
+
+									h3 {
+										font-size: pr(16px);
+
+										b {
+											color: #f6b13a;
+										}
+
+									}
+
+								}
+
+							}
+
+						}
+
+						.right {
+							@include num(pr(58px), pr(30px));
+
+							.blue {
+								@extend %full;
+								text-align: center;
+								line-height: pr(30px);
+								border-radius: pr(20px);
+								color: #fff;
+								font-size: pr(14px);
+								background-image: linear-gradient(-150deg, #51bffe 0, #36a0ee 100%)
+							}
+
+							.red {
+								@extend %full;
+								text-align: center;
+								line-height: pr(30px);
+								border-radius: pr(20px);
+								color: #fff;
+								font-size: pr(14px);
+								background-image: linear-gradient(-150deg, #ff7499 0, #fe4f60 100%)
+							}
+
+						}
+
+					}
+
+				}
+
+			}
+
+		}
+
+	}
+
+}
+
+footer {
+	ul {
+		@include num(100%, pr(50px));
+		@include flex;
+		border-top: 1px solid #ccc;
+
+		li {
+			flex: 1;
+			@include num(100%, 100%);
+			@include flex(center);
+			flex-direction: column;
+			color: #999;
+
+			span {
+				font-size: pr(14px);
+			}
+
+			.icon {
+				font-size: pr(18px);
+			}
+
+		}
+
+		li.active {
+			color: #E37D1BFF;
+		}
+
+	}
+
+}
